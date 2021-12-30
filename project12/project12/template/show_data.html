@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<br><br><br>
+<button type="button" class="btn btn-light"><a href="{% url 'create_data' %}">add  </a> </button>
+<br><br>
+
+<table class="table table-secondary">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Type</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for i  in all_data %} 
+            <tr>
+            <td>{{  i.id }}</td>
+            <td>{{  i.name }}</td>
+            <td>{{  i.price }}</td>
+            <td>{{  i.type }}</td>
+            <td>
+                <a href="{% url 'update_data' id=i.id %}" class="btn btn-primary">UPDATE</a>
+            </td>
+            <td>
+                <a href="{% url 'delete_data' id=i.id %}" class="btn btn-danger">DELETE</a>
+
+            </td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+  </table>
