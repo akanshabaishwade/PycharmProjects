@@ -1,0 +1,13 @@
+
+{% for i in data_show %}
+<a href="{% url 'update' i.id %}"> update</a>
+<a class="btn btn-danger" href="{% url 'delete' i.id %}"> delele</a>
+
+
+<br>
+{{ i.name }}
+{{ i.relation }}
+{{ i.gift_rating }}
+<br>
+{% endfor %} 
+

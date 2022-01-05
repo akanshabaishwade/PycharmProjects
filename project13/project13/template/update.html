@@ -1,0 +1,19 @@
+
+{{old_data}}
+
+<form method="POST" action="{% url 'update' id=old_data.id %}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">name</label>
+      <input type="" class="form-control" value="{{ old_data.name }}" name="name" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">relation</label>
+      <input type="" class="form-control" value="{{ old_data.relation }}" name="relation" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">rating</label>
+        <input type="" class="form-control" value="{{ old_data.gift_rating }}" name="rating" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
