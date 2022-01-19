@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<br><br>
+
+<h2>Student Data :-</h2>
+<br><br>
+<button class="btn btn-warning ml-2"> <a href="{% url 'create' %}"> ADD Student </a></button>
+<br><br><br>
+<table class="table table-primary">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Class</th>
+        <th scope="col">Age</th>
+        <th scope="col">DELETE</th>
+        <th scope="col">UPDATE</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in all_data %}
+      <tr>
+        <td>{{ i.name }}</td>
+        <td>{{ i.Class }}</td>
+        <td>{{ i.age }}</td>
+        <td><a href="{% url 'detele' id=i.id %}" class="btn btn-danger">DELETE</a></td>
+        <td><a href="{% url 'update' id=i.id %}" class="btn btn-primary">UPDATE</a></td>
+
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
